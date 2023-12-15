@@ -6,11 +6,22 @@
 /*   By: niboukha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:50:38 by niboukha          #+#    #+#             */
-/*   Updated: 2023/02/02 21:02:24 by niboukha         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:37:24 by niboukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	you_win(t_map *map)
+{
+	char	*str;
+
+	str = ft_itoa(map->moves);
+	mlx_put_image_to_window (map->mlx, map->win, map->img.img_wall,
+		0, 0);
+	mlx_string_put(map->mlx, map->win, 15, 20, 16777194, str);
+	free (str);
+}
 
 void	move_player(t_map *map, int y, int x, void *img)
 {
@@ -29,6 +40,7 @@ void	move_player(t_map *map, int y, int x, void *img)
 		}
 		map->moves++;
 		ft_printf("%d\n", map->moves);
+		you_win(map);
 	}
 	if (map->mapp[y][x] == 'E' && map->cmpt.ccpt == 0)
 	{

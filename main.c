@@ -6,7 +6,7 @@
 /*   By: niboukha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:54:51 by niboukha          #+#    #+#             */
-/*   Updated: 2023/02/02 21:00:52 by niboukha         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:44:03 by niboukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 	lines_col_map(&map);
 	check_path(&map);
 	map.win = mlx_new_window(map.mlx, map.coor.x * 60, map.coor.y * 60,
-			"so_long");
+			"./so_long");
 	init_img(&map);
 	put_img_to_win(&map);
 	mlx_hook(map.win, ON_KEYDOWN, 0, key, &map);

@@ -6,7 +6,7 @@
 /*   By: niboukha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:40:14 by niboukha          #+#    #+#             */
-/*   Updated: 2023/02/01 17:22:46 by niboukha         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:44:32 by niboukha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ void	read_map(int fd, t_map *map)
 		buffer = get_next_line(fd);
 	}
 	if (!map_join)
+	{
+		exit_function(0);
 		exit(1);
+	}
 	map->mapp = ft_split(map_join, '\n');
 	free(map_join);
 }
